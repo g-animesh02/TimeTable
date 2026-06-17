@@ -35,6 +35,7 @@ import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.graphics.layer.drawLayer
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.rememberGraphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -43,6 +44,7 @@ import com.animesh.timetable.data.model.ScheduleEntry
 import com.animesh.timetable.ui.MainViewModel
 import com.animesh.timetable.ui.export.ImageExporter
 import com.animesh.timetable.ui.theme.DayColors
+import com.animesh.timetable.ui.theme.colorForKey
 import kotlinx.coroutines.launch
 
 private val DAY_ORDER = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
@@ -127,6 +129,14 @@ private fun DaySection(day: String, accent: Color, entries: List<ScheduleEntry>)
 
 @Composable
 private fun ClassRow(e: ScheduleEntry, accent: Color) {
+    // Color-coding applies to electives (no section): same prof -> same color, same subject -> same color.
+    val coded = e.section.isBlank() && !e.isExtra
+    val dark = MaterialTheme.colorScheme.background.luminance() < 0.5f
+    val subjectColor = if (coded) colorForKey("subject:${e.subject}", dark) else MaterialTheme.colorScheme.onSurface
+    val profColor = if (coded) colorForKey("prof:${e.faculty}", dark) else MaterialTheme.colorScheme.onSurfaceVariant
+    val roomColor = if (coded) subjectColor else MaterialTheme.colorScheme.onSurfaceVariant
+    val marker = if (coded) subjectColor else accent.copy(alpha = 0.5f)
+
     Row(
         modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp),
         verticalAlignment = Alignment.Top
@@ -135,17 +145,22 @@ private fun ClassRow(e: ScheduleEntry, accent: Color) {
             Text(e.start, fontWeight = FontWeight.SemiBold, style = MaterialTheme.typography.bodyMedium)
             Text(e.end, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-        Box(Modifier.width(2.dp).height(40.dp).background(accent.copy(alpha = 0.5f)))
+        Box(Modifier.width(3.dp).height(40.dp).background(marker))
         Column(Modifier.padding(start = 14.dp).weight(1f)) {
             Text(
                 e.subject + if (e.isExtra) "  ·  extra" else "",
-                fontWeight = FontWeight.Medium, style = MaterialTheme.typography.bodyLarge
+                fontWeight = FontWeight.SemiBold, style = MaterialTheme.typography.bodyLarge,
+                color = subjectColor
             )
-            val detail = buildString {
-                if (e.room.isNotBlank()) append("Room ${e.room}")
-                if (e.faculty.isNotBlank()) { if (isNotEmpty()) append("  ·  "); append(e.faculty) }
+            Row {
+                if (e.room.isNotBlank()) {
+                    Text("Room ${e.room}", style = MaterialTheme.typography.bodySmall, color = roomColor, fontWeight = FontWeight.Medium)
+                }
+                if (e.faculty.isNotBlank()) {
+                    if (e.room.isNotBlank()) Text("  ·  ", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(e.faculty, style = MaterialTheme.typography.bodySmall, color = profColor, fontWeight = if (coded) FontWeight.Medium else FontWeight.Normal)
+                }
             }
-            if (detail.isNotBlank()) Text(detail, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }

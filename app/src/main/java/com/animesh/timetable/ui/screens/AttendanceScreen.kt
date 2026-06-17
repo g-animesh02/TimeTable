@@ -47,8 +47,10 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.animesh.timetable.data.local.AttendanceStatus
 import com.animesh.timetable.data.model.ScheduleEntry
+import androidx.compose.ui.graphics.luminance
 import com.animesh.timetable.ui.DatedEntry
 import com.animesh.timetable.ui.MainViewModel
+import com.animesh.timetable.ui.theme.colorForKey
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -139,6 +141,10 @@ fun AttendanceScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
 @Composable
 private fun AttendanceCard(de: DatedEntry, onMark: (AttendanceStatus) -> Unit, onEdit: () -> Unit) {
     val e = de.entry
+    val coded = e.section.isBlank() && !e.isExtra
+    val dark = MaterialTheme.colorScheme.background.luminance() < 0.5f
+    val subjectColor = if (coded) colorForKey("subject:${e.subject}", dark) else MaterialTheme.colorScheme.onSurface
+    val profColor = if (coded) colorForKey("prof:${e.faculty}", dark) else MaterialTheme.colorScheme.onSurfaceVariant
     Card(
         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 5.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -150,6 +156,7 @@ private fun AttendanceCard(de: DatedEntry, onMark: (AttendanceStatus) -> Unit, o
                     Text(
                         e.subject + if (e.isExtra) "  ·  extra" else "",
                         fontWeight = FontWeight.SemiBold, style = MaterialTheme.typography.bodyLarge,
+                        color = subjectColor,
                         textDecoration = if (e.isCancelled) TextDecoration.LineThrough else null
                     )
                     val detail = buildString {
@@ -157,8 +164,8 @@ private fun AttendanceCard(de: DatedEntry, onMark: (AttendanceStatus) -> Unit, o
                         if (e.room.isNotBlank()) append("  ·  Room ${e.room}")
                         if (e.isModified) append("  ·  changed")
                     }
-                    Text(detail, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    if (e.faculty.isNotBlank()) Text(e.faculty, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(detail, style = MaterialTheme.typography.bodySmall, color = if (coded) subjectColor else MaterialTheme.colorScheme.onSurfaceVariant)
+                    if (e.faculty.isNotBlank()) Text(e.faculty, style = MaterialTheme.typography.bodySmall, color = profColor, fontWeight = if (coded) FontWeight.Medium else FontWeight.Normal)
                 }
                 IconButton(onClick = onEdit) { Icon(Icons.Filled.Edit, "Edit class") }
             }
