@@ -240,7 +240,7 @@ private fun AddClassDialog(
                             .fillMaxWidth()
                             .menuAnchor(MenuAnchorType.PrimaryNotEditable)
                     )
-                    androidx.compose.material3.ExposedDropdownMenu(
+                    ExposedDropdownMenu(
                         expanded = dayMenu, onDismissRequest = { dayMenu = false }
                     ) {
                         dayNames.forEachIndexed { i, name ->
