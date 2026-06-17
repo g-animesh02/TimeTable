@@ -20,7 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.animesh.timetable.ui.MainViewModel
-import com.animesh.timetable.ui.components.BatchSelector
 import com.animesh.timetable.ui.components.SubjectRow
 
 @OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
@@ -32,10 +31,6 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
         LazyColumn(modifier = Modifier.fillMaxSize().padding(padding)) {
             item {
                 Column(Modifier.padding(16.dp)) {
-                    Text("Batch", fontWeight = FontWeight.SemiBold)
-                    Spacer(Modifier.height(8.dp))
-                    BatchSelector(batch = state.batch, onSelect = vm::setBatch)
-                    Spacer(Modifier.height(20.dp))
                     Text(
                         "Subjects (${state.selectedSubjects.size} selected)",
                         fontWeight = FontWeight.SemiBold
@@ -52,7 +47,7 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                 SubjectRow(
                     subject = subject,
                     selected = subject in state.selectedSubjects,
-                    meetings = vm.offeringsForSubject(subject).filter { it.batch.isBlank() || it.batch == state.batch },
+                    meetings = vm.offeringsForSubject(subject),
                     onToggle = { vm.toggleSubject(subject) }
                 )
                 HorizontalDivider()

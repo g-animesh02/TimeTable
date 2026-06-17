@@ -66,7 +66,7 @@ fun ScheduleScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                         scope.launch {
                             val bmp = graphicsLayer.toImageBitmap().asAndroidBitmap()
                             val uri = com.animesh.timetable.ui.export.ImageExporter.save(
-                                context, bmp, "Timetable_Batch${state.batch}"
+                                context, bmp, "Timetable"
                             )
                             if (uri != null) {
                                 Toast.makeText(context, "Saved to Pictures/TimeTable", Toast.LENGTH_SHORT).show()
@@ -107,7 +107,7 @@ fun ScheduleScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                     }
                     .background(MaterialTheme.colorScheme.background)
             ) {
-                TimetableSheet(state.batch, schedule)
+                TimetableSheet(schedule)
             }
             Spacer(Modifier.height(88.dp))
         }
@@ -116,7 +116,7 @@ fun ScheduleScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
 
 /** The full self-contained timetable rendered for both on-screen display and image export. */
 @Composable
-private fun TimetableSheet(batch: String, schedule: Map<String, List<ScheduleEntry>>) {
+private fun TimetableSheet(schedule: Map<String, List<ScheduleEntry>>) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -129,7 +129,6 @@ private fun TimetableSheet(batch: String, schedule: Map<String, List<ScheduleEnt
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.primary
         )
-        Text("Batch $batch", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
         Spacer(Modifier.height(12.dp))
 
         DAY_ORDER.forEachIndexed { idx, day ->

@@ -7,9 +7,9 @@ image, track attendance, and add/modify classes on any given day.
 
 ## Features
 
-- **Subject selection & config** — Pick your **batch (A / B)** and the subjects
-  you're taking from the 34 Module-5 electives. Your choice is saved on-device
-  (DataStore) so the app opens straight to your timetable next time.
+- **Subject selection & config** — Pick the subjects you're taking from the 34
+  Module-5 electives. Your choice is saved on-device (DataStore) so the app
+  opens straight to your timetable next time.
 - **Week-wise timetable** — A clean Monday–Saturday view of your classes with
   time, room and faculty, colour-coded per day.
 - **Export as image** — One tap renders the whole timetable to a PNG, saves it
@@ -24,12 +24,10 @@ image, track attendance, and add/modify classes on any given day.
 ## How the timetable data works
 
 The spreadsheet organises classes into elective *baskets* (e.g. five subjects
-sharing the 09:30–11:00 slot, each with its own faculty and room). The
-`-A` / `-B` suffix on slot codes denotes the **batch division** — Batch A and
-Batch B attend the same course on different days. The parser extracted every
-`(subject, day, time, faculty, room, batch)` offering into
-`app/src/main/assets/timetable.json` (82 offerings, 34 subjects). The app
-filters these by your selected subjects and batch.
+sharing the 09:30–11:00 slot, each with its own faculty and room). The parser
+extracted every `(subject, day, time, faculty, room)` offering into
+`app/src/main/assets/timetable.json` (82 offerings, 34 subjects). The app shows
+every session of the subjects you select.
 
 ## Project structure
 

@@ -48,7 +48,6 @@ data class SubjectStat(
 data class UiState(
     val loading: Boolean = true,
     val setupDone: Boolean = false,
-    val batch: String = "A",
     val allSubjects: List<String> = emptyList(),
     val selectedSubjects: Set<String> = emptySet(),
     val offerings: List<ClassOffering> = emptyList(),
@@ -59,8 +58,8 @@ data class UiState(
     /** The recurring weekly schedule (no dates) grouped & sorted by day then time. */
     val weeklySchedule: Map<String, List<ScheduleEntry>>
         get() {
-            val byBatch = offerings.filter {
-                it.subject in selectedSubjects && (it.batch.isBlank() || it.batch == batch)
+            val selected = offerings.filter {
+                it.subject in selectedSubjects
             }.map { o ->
                 ScheduleEntry(
                     key = "off-${o.id}", day = o.day, start = o.start, end = o.end,
@@ -75,7 +74,7 @@ data class UiState(
                     slot = "", batch = "", isExtra = true
                 )
             }
-            return (byBatch + recurringCustom)
+            return (selected + recurringCustom)
                 .groupBy { it.day }
                 .mapValues { (_, list) -> list.sortedBy { toMinutes(it.start) } }
         }
@@ -93,16 +92,15 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     val weekStart = MutableStateFlow(mondayOf(LocalDate.now()))
 
     val uiState: StateFlow<UiState> = combine(
-        combine(repo.settings.setupDone, repo.settings.batch, repo.settings.selectedSubjects) { s, b, subj -> Triple(s, b, subj) },
+        combine(repo.settings.setupDone, repo.settings.selectedSubjects) { s, subj -> s to subj },
         combine(repo.observeCustomClasses(), repo.observeOverrides(), repo.observeAttendance()) { c, o, a -> Triple(c, o, a) },
         _loading, _offerings, _allSubjects
     ) { settings, data, loading, offerings, allSubjects ->
-        val (setupDone, batch, subjects) = settings
+        val (setupDone, subjects) = settings
         val (customs, overrides, attendance) = data
         UiState(
             loading = loading,
             setupDone = setupDone,
-            batch = batch,
             allSubjects = allSubjects,
             selectedSubjects = subjects,
             offerings = offerings,
@@ -127,8 +125,6 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         if (!current.add(subject)) current.remove(subject)
         repo.settings.setSubjects(current)
     }
-
-    fun setBatch(batch: String) = viewModelScope.launch { repo.settings.setBatch(batch) }
 
     fun completeSetup() = viewModelScope.launch { repo.settings.setSetupDone(true) }
 

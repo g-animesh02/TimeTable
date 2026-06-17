@@ -21,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.animesh.timetable.ui.MainViewModel
-import com.animesh.timetable.ui.components.BatchSelector
 import com.animesh.timetable.ui.components.SubjectRow
 
 @Composable
@@ -54,14 +53,10 @@ fun SetupScreen(vm: MainViewModel) {
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        "Module 5 • Pick your batch, then choose the subjects you're enrolled in.",
+                        "Module 5 • Choose the subjects you're enrolled in.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
-                    Spacer(Modifier.height(16.dp))
-                    Text("Your batch", fontWeight = FontWeight.SemiBold)
-                    Spacer(Modifier.height(8.dp))
-                    BatchSelector(batch = state.batch, onSelect = vm::setBatch)
                     Spacer(Modifier.height(16.dp))
                     Text("Subjects", fontWeight = FontWeight.SemiBold)
                 }
@@ -71,7 +66,7 @@ fun SetupScreen(vm: MainViewModel) {
                 SubjectRow(
                     subject = subject,
                     selected = subject in state.selectedSubjects,
-                    meetings = vm.offeringsForSubject(subject).filter { it.batch.isBlank() || it.batch == state.batch },
+                    meetings = vm.offeringsForSubject(subject),
                     onToggle = { vm.toggleSubject(subject) }
                 )
                 HorizontalDivider()
