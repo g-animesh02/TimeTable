@@ -2,7 +2,7 @@ package com.animesh.timetable.data.model
 
 import kotlinx.serialization.Serializable
 
-/** Root structure of the bundled timetable.json asset. */
+/** Root structure of the bundled timetable.json asset (used to seed the built-in module). */
 @Serializable
 data class TimetableData(
     val source: String = "",
@@ -13,37 +13,27 @@ data class TimetableData(
 )
 
 @Serializable
-data class TimeSlot(
-    val start: String,
-    val end: String
-)
+data class TimeSlot(val start: String, val end: String)
 
-/**
- * A single class offering parsed from the master timetable.
- * Each elective basket subject maps to one offering with its own faculty/room.
- */
 @Serializable
 data class ClassOffering(
-    val id: Int,
+    val id: Int = 0,
     val day: String,
     val start: String,
     val end: String,
     val slot: String = "",
-    val batch: String = "",
+    val section: String = "",
     val subject: String,
     val faculty: String = "",
-    val room: String = "",
-    val allFaculty: List<String> = emptyList(),
-    val sectioned: Boolean = false
+    val room: String = ""
 )
 
 /**
- * A unified class entry shown in the timetable. It may originate from the master
- * timetable (an offering the student selected) or be a user-added extra class.
- * Day-specific overrides may adjust its time/room or cancel it for one date.
+ * A unified class entry shown in the UI. Originates either from a module offering the
+ * student selected or from a user-added extra class; per-date overrides may adjust it.
  */
 data class ScheduleEntry(
-    val key: String,          // stable identity: "off-<id>" or "custom-<id>"
+    val key: String,
     val day: String,
     val start: String,
     val end: String,
@@ -51,8 +41,8 @@ data class ScheduleEntry(
     val faculty: String,
     val room: String,
     val slot: String,
-    val batch: String,
-    val isExtra: Boolean,     // true = user-added class
+    val section: String,
+    val isExtra: Boolean,
     val isModified: Boolean = false,
     val isCancelled: Boolean = false
 ) {

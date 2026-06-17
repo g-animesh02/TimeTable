@@ -50,14 +50,10 @@
       "start": "09:30",
       "end": "11:00",
       "slot": "S 1",
-      "batch": "A",
+      "section": "",
       "subject": "Enterprise Digital Transformation",
       "faculty": "Prof. Krishnan Harishankar",
-      "room": "201",
-      "allFaculty": [
-        "Prof. Krishnan Harishankar"
-      ],
-      "sectioned": false
+      "room": "201"
     },
     {
       "id": 1,
@@ -65,14 +61,10 @@
       "start": "09:30",
       "end": "11:00",
       "slot": "S 1",
-      "batch": "A",
+      "section": "",
       "subject": "Digital and Cyber Physical System",
       "faculty": "Dr. Mayank Mishra",
-      "room": "202",
-      "allFaculty": [
-        "Dr. Mayank Mishra"
-      ],
-      "sectioned": false
+      "room": "202"
     },
     {
       "id": 2,
@@ -80,14 +72,10 @@
       "start": "09:30",
       "end": "11:00",
       "slot": "S 1",
-      "batch": "A",
+      "section": "",
       "subject": "Reinforcement Learnings : Theory and Applications",
       "faculty": "Dr. Anuj Vohra",
-      "room": "305",
-      "allFaculty": [
-        "Dr. Anuj Vohra"
-      ],
-      "sectioned": false
+      "room": "305"
     },
     {
       "id": 3,
@@ -95,14 +83,10 @@
       "start": "09:30",
       "end": "11:00",
       "slot": "S 1",
-      "batch": "A",
+      "section": "",
       "subject": "Intelligent Enterprise",
       "faculty": "Prof. Purnima Sangle",
-      "room": "204",
-      "allFaculty": [
-        "Prof. Purnima Sangle"
-      ],
-      "sectioned": false
+      "room": "204"
     },
     {
       "id": 4,
@@ -110,14 +94,10 @@
       "start": "09:30",
       "end": "11:00",
       "slot": "S 1",
-      "batch": "A",
+      "section": "",
       "subject": "Data Analytics and Knowledge Management",
       "faculty": "Prof. Hema Date",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Hema Date"
-      ],
-      "sectioned": false
+      "room": "206"
     },
     {
       "id": 5,
@@ -125,14 +105,10 @@
       "start": "11:10",
       "end": "12:40",
       "slot": "S 2",
-      "batch": "A",
+      "section": "",
       "subject": "Sustainable Supply chain Management",
       "faculty": "Prof. Vidyadhar Gedam",
-      "room": "204",
-      "allFaculty": [
-        "Prof. Vidyadhar Gedam"
-      ],
-      "sectioned": false
+      "room": "204"
     },
     {
       "id": 6,
@@ -140,14 +116,10 @@
       "start": "11:10",
       "end": "12:40",
       "slot": "S 2",
-      "batch": "A",
+      "section": "",
       "subject": "Energy efficiency, net Zero and Climate Change Management",
       "faculty": "Prof. Seema U.",
-      "room": "305",
-      "allFaculty": [
-        "Prof. Seema U."
-      ],
-      "sectioned": false
+      "room": "305"
     },
     {
       "id": 7,
@@ -155,14 +127,10 @@
       "start": "11:10",
       "end": "12:40",
       "slot": "S 2",
-      "batch": "A",
+      "section": "",
       "subject": "ESG Frameworks and Standards",
       "faculty": "Prof. Hema Diwan",
-      "room": "207",
-      "allFaculty": [
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": false
+      "room": "207"
     },
     {
       "id": 8,
@@ -170,14 +138,10 @@
       "start": "11:10",
       "end": "12:40",
       "slot": "S 2",
-      "batch": "A",
+      "section": "",
       "subject": "Operational Excellence",
       "faculty": "Prof. Rahul Aggarwal",
-      "room": "204",
-      "allFaculty": [
-        "Prof. Rahul Aggarwal"
-      ],
-      "sectioned": false
+      "room": "204"
     },
     {
       "id": 9,
@@ -185,14 +149,10 @@
       "start": "11:10",
       "end": "12:40",
       "slot": "S 2",
-      "batch": "A",
+      "section": "",
       "subject": "Strategic Sourcing",
       "faculty": "Prof. V. B. Khanapuri",
-      "room": "201",
-      "allFaculty": [
-        "Prof. V. B. Khanapuri"
-      ],
-      "sectioned": false
+      "room": "201"
     },
     {
       "id": 10,
@@ -200,78 +160,54 @@
       "start": "14:30",
       "end": "16:00",
       "slot": "S 3",
-      "batch": "A",
+      "section": "A",
       "subject": "Business Ethics",
       "faculty": "Prof. D.K. Srivastava",
-      "room": "202",
-      "allFaculty": [
-        "Prof. D.K. Srivastava",
-        "Prof. Ranjan K. Mohapatra",
-        "Prof. Bhavya Kapoor",
-        "Prof. Nikhil K. Mehta",
-        "Prof. Sukrit Dutt"
-      ],
-      "sectioned": true
+      "room": "202"
     },
     {
       "id": 11,
       "day": "Monday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "A",
-      "subject": "Competency Assessment And Development",
-      "faculty": "Prof. D.K. Srivastava",
-      "room": "202",
-      "allFaculty": [
-        "Prof. D.K. Srivastava"
-      ],
-      "sectioned": false
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 3",
+      "section": "C",
+      "subject": "Business Ethics",
+      "faculty": "Prof. Ranjan K. Mohapatra",
+      "room": "201"
     },
     {
       "id": 12,
       "day": "Monday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "A",
-      "subject": "Building and Leading Teams in Entrepreneurial Ventures",
-      "faculty": "Mr. Ankur Jain",
-      "room": "204",
-      "allFaculty": [
-        "Mr. Ankur Jain"
-      ],
-      "sectioned": false
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 3",
+      "section": "E",
+      "subject": "Business Ethics",
+      "faculty": "Prof. Bhavya Kapoor",
+      "room": "206"
     },
     {
       "id": 13,
       "day": "Monday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "A",
-      "subject": "Merger & Acquistion",
-      "faculty": "Atul Bhat",
-      "room": "207",
-      "allFaculty": [
-        "Atul Bhat"
-      ],
-      "sectioned": false
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 3",
+      "section": "F",
+      "subject": "Business Ethics",
+      "faculty": "Prof. Nikhil K. Mehta",
+      "room": "207"
     },
     {
       "id": 14,
       "day": "Monday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "A",
-      "subject": "Business Consulting and Innovation",
-      "faculty": "Prof. Rahul Aggarwal",
-      "room": "208",
-      "allFaculty": [
-        "Prof. Rahul Aggarwal"
-      ],
-      "sectioned": false
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 3",
+      "section": "G",
+      "subject": "Business Ethics",
+      "faculty": "Prof. Sukrit Dutt",
+      "room": "204"
     },
     {
       "id": 15,
@@ -279,104 +215,76 @@
       "start": "16:10",
       "end": "17:40",
       "slot": "S 4",
-      "batch": "A",
-      "subject": "Advanced SCM with Artificial Intelligence",
-      "faculty": "Mr. Amit Kawoor",
-      "room": "201",
-      "allFaculty": [
-        "Mr. Amit Kawoor"
-      ],
-      "sectioned": false
+      "section": "",
+      "subject": "Competency Assessment And Development",
+      "faculty": "Prof. D.K. Srivastava",
+      "room": "202"
     },
     {
       "id": 16,
       "day": "Monday",
-      "start": "18:20",
-      "end": "19:50",
-      "slot": "S 13",
-      "batch": "A",
-      "subject": "Product Management",
-      "faculty": "Prof. Neeraj Pandey",
-      "room": "305",
-      "allFaculty": [
-        "Prof. Neeraj Pandey"
-      ],
-      "sectioned": false
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Building and Leading Teams in Entrepreneurial Ventures",
+      "faculty": "Mr. Ankur Jain",
+      "room": "204"
     },
     {
       "id": 17,
       "day": "Monday",
-      "start": "20:00",
-      "end": "21:30",
-      "slot": "S 13",
-      "batch": "B",
-      "subject": "Product Management",
-      "faculty": "Prof. Neeraj Pandey",
-      "room": "305",
-      "allFaculty": [
-        "Prof. Neeraj Pandey"
-      ],
-      "sectioned": false
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Merger & Acquistion",
+      "faculty": "Atul Bhat",
+      "room": "207"
     },
     {
       "id": 18,
-      "day": "Tuesday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 2",
-      "batch": "B",
-      "subject": "Sustainable Supply chain Management",
-      "faculty": "Prof. Vidyadhar Gedam",
-      "room": "204",
-      "allFaculty": [
-        "Prof. Vidyadhar Gedam"
-      ],
-      "sectioned": false
+      "day": "Monday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Business Consulting and Innovation",
+      "faculty": "Prof. Rahul Aggarwal",
+      "room": "208"
     },
     {
       "id": 19,
-      "day": "Tuesday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 2",
-      "batch": "B",
-      "subject": "Energy efficiency, net Zero and Climate Change Management",
-      "faculty": "Prof. Seema U.",
-      "room": "305",
-      "allFaculty": [
-        "Prof. Seema U."
-      ],
-      "sectioned": false
+      "day": "Monday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Advanced SCM with Artificial Intelligence",
+      "faculty": "Mr. Amit Kawoor",
+      "room": "201"
     },
     {
       "id": 20,
-      "day": "Tuesday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 2",
-      "batch": "B",
-      "subject": "ESG Frameworks and Standards",
-      "faculty": "Prof. Hema Diwan",
-      "room": "207",
-      "allFaculty": [
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": false
+      "day": "Monday",
+      "start": "18:20",
+      "end": "19:50",
+      "slot": "S 13",
+      "section": "",
+      "subject": "Product Management",
+      "faculty": "Prof. Neeraj Pandey",
+      "room": "305"
     },
     {
       "id": 21,
-      "day": "Tuesday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 2",
-      "batch": "B",
-      "subject": "Operational Excellence",
-      "faculty": "Prof. Rahul Aggarwal",
-      "room": "204",
-      "allFaculty": [
-        "Prof. Rahul Aggarwal"
-      ],
-      "sectioned": false
+      "day": "Monday",
+      "start": "20:00",
+      "end": "21:30",
+      "slot": "S 13",
+      "section": "",
+      "subject": "Product Management",
+      "faculty": "Prof. Neeraj Pandey",
+      "room": "305"
     },
     {
       "id": 22,
@@ -384,74 +292,54 @@
       "start": "09:30",
       "end": "11:00",
       "slot": "S 2",
-      "batch": "B",
-      "subject": "Strategic Sourcing",
-      "faculty": "Prof. V. B. Khanapuri",
-      "room": "201",
-      "allFaculty": [
-        "Prof. V. B. Khanapuri"
-      ],
-      "sectioned": false
+      "section": "",
+      "subject": "Sustainable Supply chain Management",
+      "faculty": "Prof. Vidyadhar Gedam",
+      "room": "204"
     },
     {
       "id": 23,
       "day": "Tuesday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 1",
-      "batch": "B",
-      "subject": "Enterprise Digital Transformation",
-      "faculty": "Prof. Krishnan Harishankar",
-      "room": "201",
-      "allFaculty": [
-        "Prof. Krishnan Harishankar"
-      ],
-      "sectioned": false
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 2",
+      "section": "",
+      "subject": "Energy efficiency, net Zero and Climate Change Management",
+      "faculty": "Prof. Seema U.",
+      "room": "305"
     },
     {
       "id": 24,
       "day": "Tuesday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 1",
-      "batch": "B",
-      "subject": "Digital and Cyber Physical System",
-      "faculty": "Dr. Mayank Mishra",
-      "room": "202",
-      "allFaculty": [
-        "Dr. Mayank Mishra"
-      ],
-      "sectioned": false
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 2",
+      "section": "",
+      "subject": "ESG Frameworks and Standards",
+      "faculty": "Prof. Hema Diwan",
+      "room": "207"
     },
     {
       "id": 25,
       "day": "Tuesday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 1",
-      "batch": "B",
-      "subject": "Reinforcement Learnings : Theory and Applications",
-      "faculty": "Dr. Anuj Vohra",
-      "room": "305",
-      "allFaculty": [
-        "Dr. Anuj Vohra"
-      ],
-      "sectioned": false
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 2",
+      "section": "",
+      "subject": "Operational Excellence",
+      "faculty": "Prof. Rahul Aggarwal",
+      "room": "204"
     },
     {
       "id": 26,
       "day": "Tuesday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 1",
-      "batch": "B",
-      "subject": "Intelligent Enterprise",
-      "faculty": "Prof. Purnima Sangle",
-      "room": "204",
-      "allFaculty": [
-        "Prof. Purnima Sangle"
-      ],
-      "sectioned": false
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 2",
+      "section": "",
+      "subject": "Strategic Sourcing",
+      "faculty": "Prof. V. B. Khanapuri",
+      "room": "201"
     },
     {
       "id": 27,
@@ -459,897 +347,791 @@
       "start": "11:10",
       "end": "12:40",
       "slot": "S 1",
-      "batch": "B",
-      "subject": "Data Analytics and Knowledge Management",
-      "faculty": "Prof. Hema Date",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Hema Date"
-      ],
-      "sectioned": false
+      "section": "",
+      "subject": "Enterprise Digital Transformation",
+      "faculty": "Prof. Krishnan Harishankar",
+      "room": "201"
     },
     {
       "id": 28,
       "day": "Tuesday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 3",
-      "batch": "B",
-      "subject": "Business Ethics",
-      "faculty": "Prof. D.K. Srivastava",
-      "room": "202",
-      "allFaculty": [
-        "Prof. D.K. Srivastava",
-        "Prof. Ranjan K. Mohapatra",
-        "Prof. Nikhil K. Mehta",
-        "Prof. Nishant Uppal"
-      ],
-      "sectioned": true
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 1",
+      "section": "",
+      "subject": "Digital and Cyber Physical System",
+      "faculty": "Dr. Mayank Mishra",
+      "room": "202"
     },
     {
       "id": 29,
       "day": "Tuesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "B",
-      "subject": "Competency Assessment And Development",
-      "faculty": "Prof. D.K. Srivastava",
-      "room": "202",
-      "allFaculty": [
-        "Prof. D.K. Srivastava"
-      ],
-      "sectioned": false
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 1",
+      "section": "",
+      "subject": "Reinforcement Learnings : Theory and Applications",
+      "faculty": "Dr. Anuj Vohra",
+      "room": "305"
     },
     {
       "id": 30,
       "day": "Tuesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "B",
-      "subject": "Building and Leading Teams in Entrepreneurial Ventures",
-      "faculty": "Mr. Ankur Jain",
-      "room": "204",
-      "allFaculty": [
-        "Mr. Ankur Jain"
-      ],
-      "sectioned": false
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 1",
+      "section": "",
+      "subject": "Intelligent Enterprise",
+      "faculty": "Prof. Purnima Sangle",
+      "room": "204"
     },
     {
       "id": 31,
       "day": "Tuesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "B",
-      "subject": "Merger & Acquistion",
-      "faculty": "Atul Bhat",
-      "room": "207",
-      "allFaculty": [
-        "Atul Bhat"
-      ],
-      "sectioned": false
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 1",
+      "section": "",
+      "subject": "Data Analytics and Knowledge Management",
+      "faculty": "Prof. Hema Date",
+      "room": "206"
     },
     {
       "id": 32,
       "day": "Tuesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "B",
-      "subject": "Business Consulting and Innovation",
-      "faculty": "Prof. Rahul Aggarwal",
-      "room": "208",
-      "allFaculty": [
-        "Prof. Rahul Aggarwal"
-      ],
-      "sectioned": false
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 3",
+      "section": "B",
+      "subject": "Business Ethics",
+      "faculty": "Prof. D.K. Srivastava",
+      "room": "202"
     },
     {
       "id": 33,
       "day": "Tuesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 4",
-      "batch": "B",
-      "subject": "Advanced SCM with Artificial Intelligence",
-      "faculty": "Mr. Sidharth Joshi",
-      "room": "201",
-      "allFaculty": [
-        "Mr. Sidharth Joshi"
-      ],
-      "sectioned": false
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 3",
+      "section": "D",
+      "subject": "Business Ethics",
+      "faculty": "Prof. Ranjan K. Mohapatra",
+      "room": "204"
     },
     {
       "id": 34,
-      "day": "Wednesday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 5",
-      "batch": "A",
-      "subject": "Leadership Development",
-      "faculty": "Prof. Upasna Agarwal",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Upasna Agarwal"
-      ],
-      "sectioned": false
+      "day": "Tuesday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 3",
+      "section": "H",
+      "subject": "Business Ethics",
+      "faculty": "Prof. Nikhil K. Mehta",
+      "room": "203"
     },
     {
       "id": 35,
-      "day": "Wednesday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 5",
-      "batch": "A",
-      "subject": "Environmental Impact Assessment",
-      "faculty": "Prof. Anju Singh",
-      "room": "203",
-      "allFaculty": [
-        "Prof. Anju Singh"
-      ],
-      "sectioned": false
+      "day": "Tuesday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 3",
+      "section": "I",
+      "subject": "Business Ethics",
+      "faculty": "Prof. Nishant Uppal",
+      "room": "201"
     },
     {
       "id": 36,
-      "day": "Wednesday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 5",
-      "batch": "A",
-      "subject": "Sustainable Development for Business",
-      "faculty": "Prof. Hema Diwan / Prof. Vidyadhar Gedam",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Hema Diwan / Prof. Vidyadhar Gedam"
-      ],
-      "sectioned": false
+      "day": "Tuesday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Competency Assessment And Development",
+      "faculty": "Prof. D.K. Srivastava",
+      "room": "202"
     },
     {
       "id": 37,
-      "day": "Wednesday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 6",
-      "batch": "A",
-      "subject": "Strategic Management",
-      "faculty": "GF / Industry",
-      "room": "201",
-      "allFaculty": [
-        "GF / Industry"
-      ],
-      "sectioned": false
+      "day": "Tuesday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Building and Leading Teams in Entrepreneurial Ventures",
+      "faculty": "Mr. Ankur Jain",
+      "room": "204"
     },
     {
       "id": 38,
-      "day": "Wednesday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 6",
-      "batch": "A",
-      "subject": "Sustainable Development for Business",
-      "faculty": "Prof. Anju Singh",
-      "room": "203",
-      "allFaculty": [
-        "Prof. Anju Singh"
-      ],
-      "sectioned": false
+      "day": "Tuesday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Merger & Acquistion",
+      "faculty": "Atul Bhat",
+      "room": "207"
     },
     {
       "id": 39,
-      "day": "Wednesday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 6",
-      "batch": "A",
-      "subject": "Sustainable Strategic Management",
-      "faculty": "Prof. Shirish Sangle",
-      "room": "207",
-      "allFaculty": [
-        "Prof. Shirish Sangle"
-      ],
-      "sectioned": false
+      "day": "Tuesday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Business Consulting and Innovation",
+      "faculty": "Prof. Rahul Aggarwal",
+      "room": "208"
     },
     {
       "id": 40,
-      "day": "Wednesday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 7",
-      "batch": "A",
-      "subject": "Leadership Development",
-      "faculty": "Prof. Sumi Jha",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Sumi Jha",
-        "Prof. Poonam Singh",
-        "Prof. Bhavya Kapoor",
-        "Prof. Utpal Chattopadhyay",
-        "Prof. Milind M. Akarte",
-        "Prof. Balkrishna Eknath Narkhade"
-      ],
-      "sectioned": true
+      "day": "Tuesday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 4",
+      "section": "",
+      "subject": "Advanced SCM with Artificial Intelligence",
+      "faculty": "Mr. Sidharth Joshi",
+      "room": "201"
     },
     {
       "id": 41,
       "day": "Wednesday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 7",
-      "batch": "A",
-      "subject": "Operations Strategy",
-      "faculty": "Prof. Poonam Singh",
-      "room": "203",
-      "allFaculty": [
-        "Prof. Sumi Jha",
-        "Prof. Poonam Singh",
-        "Prof. Bhavya Kapoor",
-        "Prof. Utpal Chattopadhyay",
-        "Prof. Milind M. Akarte",
-        "Prof. Balkrishna Eknath Narkhade"
-      ],
-      "sectioned": true
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 5",
+      "section": "E",
+      "subject": "Leadership Development",
+      "faculty": "Prof. Upasna Agarwal",
+      "room": "202"
     },
     {
       "id": 42,
       "day": "Wednesday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 7",
-      "batch": "A",
-      "subject": "Strategic Management",
-      "faculty": "Prof. Bhavya Kapoor",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Sumi Jha",
-        "Prof. Poonam Singh",
-        "Prof. Bhavya Kapoor",
-        "Prof. Utpal Chattopadhyay",
-        "Prof. Milind M. Akarte",
-        "Prof. Balkrishna Eknath Narkhade"
-      ],
-      "sectioned": true
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 5",
+      "section": "F",
+      "subject": "Environmental Impact Assessment",
+      "faculty": "Prof. Anju Singh",
+      "room": "203"
     },
     {
       "id": 43,
       "day": "Wednesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 8",
-      "batch": "A",
-      "subject": "Leadership Development",
-      "faculty": "Prof. Binilkumar A. Sreeraman",
-      "room": "204",
-      "allFaculty": [
-        "Prof. Binilkumar A. Sreeraman",
-        "Prof. Amitabha Sengupta",
-        "Prof. Mainak Mazumdar",
-        "Prof. Sumi Jha",
-        "Prof. Milind M. Akarte",
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": true
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 5",
+      "section": "I",
+      "subject": "Sustainable Development for Business",
+      "faculty": "Prof. Hema Diwan / Prof. Vidyadhar Gedam",
+      "room": "206"
     },
     {
       "id": 44,
       "day": "Wednesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 8",
-      "batch": "A",
-      "subject": "Operations Strategy",
-      "faculty": "Prof. Amitabha Sengupta",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Binilkumar A. Sreeraman",
-        "Prof. Amitabha Sengupta",
-        "Prof. Mainak Mazumdar",
-        "Prof. Sumi Jha",
-        "Prof. Milind M. Akarte",
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": true
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 6",
+      "section": "E",
+      "subject": "Strategic Management",
+      "faculty": "GF / Industry",
+      "room": "201"
     },
     {
       "id": 45,
       "day": "Wednesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 8",
-      "batch": "A",
-      "subject": "Strategic Management",
-      "faculty": "Prof. Mainak Mazumdar",
-      "room": "203",
-      "allFaculty": [
-        "Prof. Binilkumar A. Sreeraman",
-        "Prof. Amitabha Sengupta",
-        "Prof. Mainak Mazumdar",
-        "Prof. Sumi Jha",
-        "Prof. Milind M. Akarte",
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": true
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 6",
+      "section": "H",
+      "subject": "Sustainable Development for Business",
+      "faculty": "Prof. Anju Singh",
+      "room": "203"
     },
     {
       "id": 46,
       "day": "Wednesday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 8",
-      "batch": "A",
-      "subject": "Sustainable Development for Business",
-      "faculty": "Prof. Sumi Jha",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Binilkumar A. Sreeraman",
-        "Prof. Amitabha Sengupta",
-        "Prof. Mainak Mazumdar",
-        "Prof. Sumi Jha",
-        "Prof. Milind M. Akarte",
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": true
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 6",
+      "section": "I",
+      "subject": "Sustainable Strategic Management",
+      "faculty": "Prof. Shirish Sangle",
+      "room": "207"
     },
     {
       "id": 47,
-      "day": "Thursday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 6",
-      "batch": "B",
-      "subject": "Strategic Management",
-      "faculty": "GF / Industry",
-      "room": "201",
-      "allFaculty": [
-        "GF / Industry"
-      ],
-      "sectioned": false
+      "day": "Wednesday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "A",
+      "subject": "Leadership Development",
+      "faculty": "Prof. Sumi Jha",
+      "room": "202"
     },
     {
       "id": 48,
-      "day": "Thursday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 6",
-      "batch": "B",
-      "subject": "Sustainable Development for Business",
-      "faculty": "Prof. Anju Singh",
-      "room": "203",
-      "allFaculty": [
-        "Prof. Anju Singh"
-      ],
-      "sectioned": false
+      "day": "Wednesday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "B",
+      "subject": "Operations Strategy",
+      "faculty": "Prof. Poonam Singh",
+      "room": "203"
     },
     {
       "id": 49,
-      "day": "Thursday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 6",
-      "batch": "B",
-      "subject": "Sustainable Strategic Management",
-      "faculty": "Prof. Shirish Sangle",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Shirish Sangle"
-      ],
-      "sectioned": false
+      "day": "Wednesday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "C",
+      "subject": "Strategic Management",
+      "faculty": "Prof. Bhavya Kapoor",
+      "room": "206"
     },
     {
       "id": 50,
-      "day": "Thursday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 5",
-      "batch": "B",
-      "subject": "Leadership Development",
-      "faculty": "Prof. Upasna Agarwal",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Upasna Agarwal"
-      ],
-      "sectioned": false
+      "day": "Wednesday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "D",
+      "subject": "Strategic Management",
+      "faculty": "Prof. Utpal Chattopadhyay",
+      "room": "207"
     },
     {
       "id": 51,
-      "day": "Thursday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 5",
-      "batch": "B",
-      "subject": "Environmental Impact Assessment",
-      "faculty": "Prof. Anju Singh",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Anju Singh"
-      ],
-      "sectioned": false
+      "day": "Wednesday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "G",
+      "subject": "Operations Strategy",
+      "faculty": "Prof. Milind M. Akarte",
+      "room": "208"
     },
     {
       "id": 52,
-      "day": "Thursday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 5",
-      "batch": "B",
-      "subject": "Sustainable Development for Business",
-      "faculty": "Prof. Hema Diwan / Prof. Vidyadhar Gedam",
-      "room": "207",
-      "allFaculty": [
-        "Prof. Hema Diwan / Prof. Vidyadhar Gedam"
-      ],
-      "sectioned": false
+      "day": "Wednesday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "H",
+      "subject": "Strategic Management",
+      "faculty": "Prof. Balkrishna Eknath Narkhade",
+      "room": "201"
     },
     {
       "id": 53,
-      "day": "Thursday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 7",
-      "batch": "B",
+      "day": "Wednesday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 8",
+      "section": "A",
       "subject": "Leadership Development",
-      "faculty": "Prof. Sumi Jha",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Sumi Jha",
-        "Prof. Poonam Singh",
-        "Prof. Bhavya Kapoor",
-        "Prof. Utpal Chattopadhyay",
-        "Prof. Milind M. Akarte",
-        "Prof. Balkrishna Eknath Narkhade"
-      ],
-      "sectioned": true
+      "faculty": "Prof. Binilkumar A. Sreeraman",
+      "room": "204"
     },
     {
       "id": 54,
-      "day": "Thursday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 7",
-      "batch": "B",
+      "day": "Wednesday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 8",
+      "section": "B",
       "subject": "Operations Strategy",
-      "faculty": "Prof. Poonam Singh",
-      "room": "203",
-      "allFaculty": [
-        "Prof. Sumi Jha",
-        "Prof. Poonam Singh",
-        "Prof. Bhavya Kapoor",
-        "Prof. Utpal Chattopadhyay",
-        "Prof. Milind M. Akarte",
-        "Prof. Balkrishna Eknath Narkhade"
-      ],
-      "sectioned": true
+      "faculty": "Prof. Amitabha Sengupta",
+      "room": "206"
     },
     {
       "id": 55,
-      "day": "Thursday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 7",
-      "batch": "B",
+      "day": "Wednesday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 8",
+      "section": "C",
       "subject": "Strategic Management",
-      "faculty": "Prof. Bhavya Kapoor",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Sumi Jha",
-        "Prof. Poonam Singh",
-        "Prof. Bhavya Kapoor",
-        "Prof. Utpal Chattopadhyay",
-        "Prof. Milind M. Akarte",
-        "Prof. Balkrishna Eknath Narkhade"
-      ],
-      "sectioned": true
+      "faculty": "Prof. Mainak Mazumdar",
+      "room": "203"
     },
     {
       "id": 56,
-      "day": "Thursday",
+      "day": "Wednesday",
       "start": "16:10",
       "end": "17:40",
       "slot": "S 8",
-      "batch": "B",
-      "subject": "Leadership Development",
-      "faculty": "Prof. Binilkumar A. Sreeraman",
-      "room": "204",
-      "allFaculty": [
-        "Prof. Binilkumar A. Sreeraman",
-        "Prof. Amitabha Sengupta",
-        "Prof. Mainak Mazumdar",
-        "Prof. Sumi Jha",
-        "Prof. Milind M. Akarte",
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": true
+      "section": "D",
+      "subject": "Sustainable Development for Business",
+      "faculty": "Prof. Sumi Jha",
+      "room": "202"
     },
     {
       "id": 57,
-      "day": "Thursday",
+      "day": "Wednesday",
       "start": "16:10",
       "end": "17:40",
       "slot": "S 8",
-      "batch": "B",
+      "section": "F",
       "subject": "Operations Strategy",
-      "faculty": "Prof. Amitabha Sengupta",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Binilkumar A. Sreeraman",
-        "Prof. Amitabha Sengupta",
-        "Prof. Mainak Mazumdar",
-        "Prof. Sumi Jha",
-        "Prof. Milind M. Akarte",
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": true
+      "faculty": "Prof. Milind M. Akarte",
+      "room": "208"
     },
     {
       "id": 58,
-      "day": "Thursday",
+      "day": "Wednesday",
       "start": "16:10",
       "end": "17:40",
       "slot": "S 8",
-      "batch": "B",
-      "subject": "Strategic Management",
-      "faculty": "Prof. Mainak Mazumdar",
-      "room": "203",
-      "allFaculty": [
-        "Prof. Binilkumar A. Sreeraman",
-        "Prof. Amitabha Sengupta",
-        "Prof. Mainak Mazumdar",
-        "Prof. Sumi Jha",
-        "Prof. Milind M. Akarte",
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": true
+      "section": "G",
+      "subject": "Sustainable Development for Business",
+      "faculty": "Prof. Hema Diwan",
+      "room": "201"
     },
     {
       "id": 59,
       "day": "Thursday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 8",
-      "batch": "B",
-      "subject": "Sustainable Development for Business",
-      "faculty": "Prof. Sumi Jha",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Binilkumar A. Sreeraman",
-        "Prof. Amitabha Sengupta",
-        "Prof. Mainak Mazumdar",
-        "Prof. Sumi Jha",
-        "Prof. Milind M. Akarte",
-        "Prof. Hema Diwan"
-      ],
-      "sectioned": true
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 6",
+      "section": "E",
+      "subject": "Strategic Management",
+      "faculty": "GF / Industry",
+      "room": "201"
     },
     {
       "id": 60,
-      "day": "Friday",
+      "day": "Thursday",
       "start": "09:30",
       "end": "11:00",
-      "slot": "S 9",
-      "batch": "A",
-      "subject": "Next-Gen Facility Planning: Analytics, AI, and Automation",
-      "faculty": "Prof. Priyanka Verma",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Priyanka Verma"
-      ],
-      "sectioned": false
+      "slot": "S 6",
+      "section": "H",
+      "subject": "Sustainable Development for Business",
+      "faculty": "Prof. Anju Singh",
+      "room": "203"
     },
     {
       "id": 61,
-      "day": "Friday",
+      "day": "Thursday",
       "start": "09:30",
       "end": "11:00",
-      "slot": "S 9",
-      "batch": "A",
-      "subject": "Prescriptive Analytics: Operations & Supply Chain Networks",
-      "faculty": "Prof. L. Ganapathy",
-      "room": "203",
-      "allFaculty": [
-        "Prof. L. Ganapathy"
-      ],
-      "sectioned": false
+      "slot": "S 6",
+      "section": "I",
+      "subject": "Sustainable Strategic Management",
+      "faculty": "Prof. Shirish Sangle",
+      "room": "206"
     },
     {
       "id": 62,
-      "day": "Friday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 9",
-      "batch": "A",
-      "subject": "Smart Service Systems: Operations for the Digital Age",
-      "faculty": "Prof. Rofin T. M.",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Rofin T. M."
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 5",
+      "section": "E",
+      "subject": "Leadership Development",
+      "faculty": "Prof. Upasna Agarwal",
+      "room": "206"
     },
     {
       "id": 63,
-      "day": "Friday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 9",
-      "batch": "A",
-      "subject": "Interconnected Logistics",
-      "faculty": "Prof. Vijaya Kumar Manupati",
-      "room": "207",
-      "allFaculty": [
-        "Prof. Vijaya Kumar Manupati"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 5",
+      "section": "F",
+      "subject": "Environmental Impact Assessment",
+      "faculty": "Prof. Anju Singh",
+      "room": "202"
     },
     {
       "id": 64,
-      "day": "Friday",
-      "start": "09:30",
-      "end": "11:00",
-      "slot": "S 9",
-      "batch": "A",
-      "subject": "Business Dynamics and System Simulation",
-      "faculty": "Prof. Padmanav Acharya",
-      "room": "208",
-      "allFaculty": [
-        "Prof. Padmanav Acharya"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 5",
+      "section": "I",
+      "subject": "Sustainable Development for Business",
+      "faculty": "Prof. Hema Diwan / Prof. Vidyadhar Gedam",
+      "room": "207"
     },
     {
       "id": 65,
-      "day": "Friday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 9",
-      "batch": "B",
-      "subject": "Next-Gen Facility Planning: Analytics, AI, and Automation",
-      "faculty": "Prof. Priyanka Verma",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Priyanka Verma"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "A",
+      "subject": "Leadership Development",
+      "faculty": "Prof. Sumi Jha",
+      "room": "202"
     },
     {
       "id": 66,
-      "day": "Friday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 9",
-      "batch": "B",
-      "subject": "Prescriptive Analytics: Operations & Supply Chain Networks",
-      "faculty": "Prof. L. Ganapathy",
-      "room": "203",
-      "allFaculty": [
-        "Prof. L. Ganapathy"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "B",
+      "subject": "Operations Strategy",
+      "faculty": "Prof. Poonam Singh",
+      "room": "203"
     },
     {
       "id": 67,
-      "day": "Friday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 9",
-      "batch": "B",
-      "subject": "Smart Service Systems: Operations for the Digital Age",
-      "faculty": "Prof. Rofin T. M.",
-      "room": "206",
-      "allFaculty": [
-        "Prof. Rofin T. M."
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "C",
+      "subject": "Strategic Management",
+      "faculty": "Prof. Bhavya Kapoor",
+      "room": "206"
     },
     {
       "id": 68,
-      "day": "Friday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 9",
-      "batch": "B",
-      "subject": "Interconnected Logistics",
-      "faculty": "Prof. Vijaya Kumar Manupati",
-      "room": "207",
-      "allFaculty": [
-        "Prof. Vijaya Kumar Manupati"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "D",
+      "subject": "Strategic Management",
+      "faculty": "Prof. Utpal Chattopadhyay",
+      "room": "207"
     },
     {
       "id": 69,
-      "day": "Friday",
-      "start": "11:10",
-      "end": "12:40",
-      "slot": "S 9",
-      "batch": "B",
-      "subject": "Business Dynamics and System Simulation",
-      "faculty": "Prof. Padmanav Acharya",
-      "room": "208",
-      "allFaculty": [
-        "Prof. Padmanav Acharya"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 7",
+      "section": "G",
+      "subject": "Operations Strategy",
+      "faculty": "Prof. Milind M. Akarte",
+      "room": "208"
     },
     {
       "id": 70,
-      "day": "Friday",
+      "day": "Thursday",
       "start": "14:30",
       "end": "16:00",
-      "slot": "S 10",
-      "batch": "A",
-      "subject": "Investment Strategies And Portfolio Management",
-      "faculty": "Prof. Ajaya Kumar Panda",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Ajaya Kumar Panda"
-      ],
-      "sectioned": false
+      "slot": "S 7",
+      "section": "H",
+      "subject": "Strategic Management",
+      "faculty": "Prof. Balkrishna Eknath Narkhade",
+      "room": "201"
     },
     {
       "id": 71,
-      "day": "Friday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 10",
-      "batch": "A",
-      "subject": "Supply Chain Finance",
-      "faculty": "Prof. M. Venkateshwarlu",
-      "room": "206",
-      "allFaculty": [
-        "Prof. M. Venkateshwarlu"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 8",
+      "section": "A",
+      "subject": "Leadership Development",
+      "faculty": "Prof. Binilkumar A. Sreeraman",
+      "room": "204"
     },
     {
       "id": 72,
-      "day": "Friday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 10",
-      "batch": "A",
-      "subject": "Private Equity and Venture Finance",
-      "faculty": "Prof. Babita Agarwal",
-      "room": "201",
-      "allFaculty": [
-        "Prof. Babita Agarwal"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 8",
+      "section": "B",
+      "subject": "Operations Strategy",
+      "faculty": "Prof. Amitabha Sengupta",
+      "room": "206"
     },
     {
       "id": 73,
-      "day": "Friday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 10",
-      "batch": "A",
-      "subject": "Square Foot Economics",
-      "faculty": "Prof. Ramesh Bhat",
-      "room": "208",
-      "allFaculty": [
-        "Prof. Ramesh Bhat"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 8",
+      "section": "C",
+      "subject": "Strategic Management",
+      "faculty": "Prof. Mainak Mazumdar",
+      "room": "203"
     },
     {
       "id": 74,
-      "day": "Friday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 10",
-      "batch": "A",
-      "subject": "AI- Powered Financial Decision Architecture",
-      "faculty": "Mr. Pallav Agarwal",
-      "room": "305",
-      "allFaculty": [
-        "Mr. Pallav Agarwal"
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 8",
+      "section": "D",
+      "subject": "Sustainable Development for Business",
+      "faculty": "Prof. Sumi Jha",
+      "room": "202"
     },
     {
       "id": 75,
-      "day": "Friday",
-      "start": "14:30",
-      "end": "16:00",
-      "slot": "S 10",
-      "batch": "A",
-      "subject": "Strategic Cost Management",
-      "faculty": "Prof. Ranjani K. S.",
-      "room": "207",
-      "allFaculty": [
-        "Prof. Ranjani K. S."
-      ],
-      "sectioned": false
+      "day": "Thursday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 8",
+      "section": "F",
+      "subject": "Operations Strategy",
+      "faculty": "Prof. Milind M. Akarte",
+      "room": "208"
     },
     {
       "id": 76,
-      "day": "Friday",
+      "day": "Thursday",
       "start": "16:10",
       "end": "17:40",
-      "slot": "S 10",
-      "batch": "B",
-      "subject": "Investment Strategies And Portfolio Management",
-      "faculty": "Prof. Ajaya Kumar Panda",
-      "room": "202",
-      "allFaculty": [
-        "Prof. Ajaya Kumar Panda"
-      ],
-      "sectioned": false
+      "slot": "S 8",
+      "section": "G",
+      "subject": "Sustainable Development for Business",
+      "faculty": "Prof. Hema Diwan",
+      "room": "201"
     },
     {
       "id": 77,
       "day": "Friday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 10",
-      "batch": "B",
-      "subject": "Supply Chain Finance",
-      "faculty": "Prof. M. Venkateshwarlu",
-      "room": "206",
-      "allFaculty": [
-        "Prof. M. Venkateshwarlu"
-      ],
-      "sectioned": false
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Next-Gen Facility Planning: Analytics, AI, and Automation",
+      "faculty": "Prof. Priyanka Verma",
+      "room": "202"
     },
     {
       "id": 78,
       "day": "Friday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 10",
-      "batch": "B",
-      "subject": "Private Equity and Venture Finance",
-      "faculty": "Prof. Babita Agarwal",
-      "room": "201",
-      "allFaculty": [
-        "Prof. Babita Agarwal"
-      ],
-      "sectioned": false
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Prescriptive Analytics: Operations & Supply Chain Networks",
+      "faculty": "Prof. L. Ganapathy",
+      "room": "203"
     },
     {
       "id": 79,
       "day": "Friday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 10",
-      "batch": "B",
-      "subject": "Square Foot Economics",
-      "faculty": "Prof. Ramesh Bhat",
-      "room": "208",
-      "allFaculty": [
-        "Prof. Ramesh Bhat"
-      ],
-      "sectioned": false
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Smart Service Systems: Operations for the Digital Age",
+      "faculty": "Prof. Rofin T. M.",
+      "room": "206"
     },
     {
       "id": 80,
       "day": "Friday",
-      "start": "16:10",
-      "end": "17:40",
-      "slot": "S 10",
-      "batch": "B",
-      "subject": "AI- Powered Financial Decision Architecture",
-      "faculty": "Mr. Pallav Agarwal",
-      "room": "305",
-      "allFaculty": [
-        "Mr. Pallav Agarwal"
-      ],
-      "sectioned": false
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Interconnected Logistics",
+      "faculty": "Prof. Vijaya Kumar Manupati",
+      "room": "207"
     },
     {
       "id": 81,
       "day": "Friday",
+      "start": "09:30",
+      "end": "11:00",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Business Dynamics and System Simulation",
+      "faculty": "Prof. Padmanav Acharya",
+      "room": "208"
+    },
+    {
+      "id": 82,
+      "day": "Friday",
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Next-Gen Facility Planning: Analytics, AI, and Automation",
+      "faculty": "Prof. Priyanka Verma",
+      "room": "202"
+    },
+    {
+      "id": 83,
+      "day": "Friday",
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Prescriptive Analytics: Operations & Supply Chain Networks",
+      "faculty": "Prof. L. Ganapathy",
+      "room": "203"
+    },
+    {
+      "id": 84,
+      "day": "Friday",
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Smart Service Systems: Operations for the Digital Age",
+      "faculty": "Prof. Rofin T. M.",
+      "room": "206"
+    },
+    {
+      "id": 85,
+      "day": "Friday",
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Interconnected Logistics",
+      "faculty": "Prof. Vijaya Kumar Manupati",
+      "room": "207"
+    },
+    {
+      "id": 86,
+      "day": "Friday",
+      "start": "11:10",
+      "end": "12:40",
+      "slot": "S 9",
+      "section": "",
+      "subject": "Business Dynamics and System Simulation",
+      "faculty": "Prof. Padmanav Acharya",
+      "room": "208"
+    },
+    {
+      "id": 87,
+      "day": "Friday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 10",
+      "section": "",
+      "subject": "Investment Strategies And Portfolio Management",
+      "faculty": "Prof. Ajaya Kumar Panda",
+      "room": "202"
+    },
+    {
+      "id": 88,
+      "day": "Friday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 10",
+      "section": "",
+      "subject": "Supply Chain Finance",
+      "faculty": "Prof. M. Venkateshwarlu",
+      "room": "206"
+    },
+    {
+      "id": 89,
+      "day": "Friday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 10",
+      "section": "",
+      "subject": "Private Equity and Venture Finance",
+      "faculty": "Prof. Babita Agarwal",
+      "room": "201"
+    },
+    {
+      "id": 90,
+      "day": "Friday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 10",
+      "section": "",
+      "subject": "Square Foot Economics",
+      "faculty": "Prof. Ramesh Bhat",
+      "room": "208"
+    },
+    {
+      "id": 91,
+      "day": "Friday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 10",
+      "section": "",
+      "subject": "AI- Powered Financial Decision Architecture",
+      "faculty": "Mr. Pallav Agarwal",
+      "room": "305"
+    },
+    {
+      "id": 92,
+      "day": "Friday",
+      "start": "14:30",
+      "end": "16:00",
+      "slot": "S 10",
+      "section": "",
+      "subject": "Strategic Cost Management",
+      "faculty": "Prof. Ranjani K. S.",
+      "room": "207"
+    },
+    {
+      "id": 93,
+      "day": "Friday",
       "start": "16:10",
       "end": "17:40",
       "slot": "S 10",
-      "batch": "B",
+      "section": "",
+      "subject": "Investment Strategies And Portfolio Management",
+      "faculty": "Prof. Ajaya Kumar Panda",
+      "room": "202"
+    },
+    {
+      "id": 94,
+      "day": "Friday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 10",
+      "section": "",
+      "subject": "Supply Chain Finance",
+      "faculty": "Prof. M. Venkateshwarlu",
+      "room": "206"
+    },
+    {
+      "id": 95,
+      "day": "Friday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 10",
+      "section": "",
+      "subject": "Private Equity and Venture Finance",
+      "faculty": "Prof. Babita Agarwal",
+      "room": "201"
+    },
+    {
+      "id": 96,
+      "day": "Friday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 10",
+      "section": "",
+      "subject": "Square Foot Economics",
+      "faculty": "Prof. Ramesh Bhat",
+      "room": "208"
+    },
+    {
+      "id": 97,
+      "day": "Friday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 10",
+      "section": "",
+      "subject": "AI- Powered Financial Decision Architecture",
+      "faculty": "Mr. Pallav Agarwal",
+      "room": "305"
+    },
+    {
+      "id": 98,
+      "day": "Friday",
+      "start": "16:10",
+      "end": "17:40",
+      "slot": "S 10",
+      "section": "",
       "subject": "Strategic Cost Management",
       "faculty": "Prof. Ranjani K. S.",
-      "room": "207",
-      "allFaculty": [
-        "Prof. Ranjani K. S."
-      ],
-      "sectioned": false
+      "room": "207"
     }
   ]
 }

@@ -1,9 +1,8 @@
 package com.animesh.timetable.ui.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ChevronLeft
@@ -25,12 +23,12 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
-import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -76,8 +74,7 @@ fun AttendanceScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                         Text("Attendance")
                         Text(
                             "${weekStart.format(RANGE_FMT)} – ${weekStart.plusDays(5).format(RANGE_FMT)}",
-                            style = MaterialTheme.typography.labelMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                            style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
                 },
@@ -89,37 +86,27 @@ fun AttendanceScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = { showAdd = true }) {
-                Icon(Icons.Filled.Add, "Add class")
-            }
+            FloatingActionButton(onClick = { showAdd = true }) { Icon(Icons.Filled.Add, "Add class") }
         }
     ) { padding ->
-        if (state.weeklySchedule.isEmpty() && days.all { it.entries.isEmpty() }) {
+        if (days.all { it.entries.isEmpty() }) {
             EmptyState("Nothing scheduled", "Pick subjects in Settings, or tap + to add a class.", Modifier.padding(padding))
             return@Scaffold
         }
-        LazyColumn(
-            modifier = Modifier.fillMaxSize().padding(padding),
-            contentPadding = androidx.compose.foundation.layout.PaddingValues(bottom = 88.dp)
-        ) {
+        LazyColumn(modifier = Modifier.fillMaxSize().padding(padding), contentPadding = PaddingValues(bottom = 96.dp)) {
             days.forEach { day ->
                 if (day.entries.isEmpty()) return@forEach
                 item(key = "h-${day.day}") {
                     Text(
-                        day.date.format(DAY_FMT),
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 4.dp)
+                        day.date.format(DAY_FMT), style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.padding(start = 20.dp, top = 18.dp, bottom = 4.dp)
                     )
                 }
                 items(day.entries, key = { "${it.entry.key}-${it.date}" }) { de ->
                     AttendanceCard(
                         de = de,
-                        onMark = { status ->
-                            if (de.status == status) vm.clearMark(de.entry, de.date)
-                            else vm.mark(de.entry, de.date, status)
-                        },
+                        onMark = { status -> if (de.status == status) vm.clearMark(de.entry, de.date) else vm.mark(de.entry, de.date, status) },
                         onEdit = { editTarget = de.entry to de.date }
                     )
                 }
@@ -132,8 +119,7 @@ fun AttendanceScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             weekStart = weekStart,
             onDismiss = { showAdd = false },
             onAdd = { day, date, start, end, subject, faculty, room ->
-                vm.addExtraClass(day, date, start, end, subject, faculty, room)
-                showAdd = false
+                vm.addExtraClass(day, date, start, end, subject, faculty, room); showAdd = false
             }
         )
     }
@@ -142,15 +128,10 @@ fun AttendanceScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
         EditClassDialog(
             entry = entry,
             onDismiss = { editTarget = null },
-            onReschedule = { s, e, r ->
-                vm.rescheduleForDate(entry, date, s, e, r); editTarget = null
-            },
+            onReschedule = { s, e, r -> vm.rescheduleForDate(entry, date, s, e, r); editTarget = null },
             onCancelDay = { vm.cancelForDate(entry, date); editTarget = null },
             onClearOverride = { vm.clearOverride(entry, date); editTarget = null },
-            onDeleteExtra = {
-                entry.key.removePrefix("custom-").toLongOrNull()?.let { vm.deleteCustomClass(it) }
-                editTarget = null
-            }
+            onDeleteExtra = { vm.deleteCustomClass(entry.key); editTarget = null }
         )
     }
 }
@@ -159,44 +140,37 @@ fun AttendanceScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
 private fun AttendanceCard(de: DatedEntry, onMark: (AttendanceStatus) -> Unit, onEdit: () -> Unit) {
     val e = de.entry
     Card(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 4.dp),
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 5.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
-        Column(Modifier.padding(12.dp)) {
+        Column(Modifier.padding(14.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(Modifier.weight(1f)) {
                     Text(
-                        e.subject + if (e.isExtra) "  (extra)" else "",
-                        fontWeight = FontWeight.SemiBold,
-                        style = MaterialTheme.typography.bodyLarge,
+                        e.subject + if (e.isExtra) "  ·  extra" else "",
+                        fontWeight = FontWeight.SemiBold, style = MaterialTheme.typography.bodyLarge,
                         textDecoration = if (e.isCancelled) TextDecoration.LineThrough else null
                     )
                     val detail = buildString {
                         append(e.timeRange)
-                        if (e.room.isNotBlank()) append("  •  Room ${e.room}")
-                        if (e.isModified) append("  • changed")
+                        if (e.room.isNotBlank()) append("  ·  Room ${e.room}")
+                        if (e.isModified) append("  ·  changed")
                     }
                     Text(detail, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    if (e.faculty.isNotBlank()) {
-                        Text(e.faculty, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
+                    if (e.faculty.isNotBlank()) Text(e.faculty, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
                 IconButton(onClick = onEdit) { Icon(Icons.Filled.Edit, "Edit class") }
             }
             if (!e.isCancelled) {
-                Spacer(Modifier.height(6.dp))
+                Spacer(Modifier.height(8.dp))
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     StatusChip("Present", de.status == AttendanceStatus.PRESENT) { onMark(AttendanceStatus.PRESENT) }
                     StatusChip("Absent", de.status == AttendanceStatus.ABSENT) { onMark(AttendanceStatus.ABSENT) }
-                    StatusChip("Cancelled", de.status == AttendanceStatus.CANCELLED) { onMark(AttendanceStatus.CANCELLED) }
+                    StatusChip("Off", de.status == AttendanceStatus.CANCELLED) { onMark(AttendanceStatus.CANCELLED) }
                 }
             } else {
-                Text(
-                    "Cancelled for this day",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.error
-                )
+                Text("Cancelled for this day", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.error)
             }
         }
     }
@@ -236,13 +210,9 @@ private fun AddClassDialog(
                         value = "${dayNames[dayIndex]} (${weekStart.plusDays(dayIndex.toLong()).format(RANGE_FMT)})",
                         onValueChange = {}, readOnly = true, label = { Text("Day") },
                         trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = dayMenu) },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .menuAnchor(MenuAnchorType.PrimaryNotEditable)
+                        modifier = Modifier.fillMaxWidth().menuAnchor(MenuAnchorType.PrimaryNotEditable)
                     )
-                    ExposedDropdownMenu(
-                        expanded = dayMenu, onDismissRequest = { dayMenu = false }
-                    ) {
+                    ExposedDropdownMenu(expanded = dayMenu, onDismissRequest = { dayMenu = false }) {
                         dayNames.forEachIndexed { i, name ->
                             DropdownMenuItem(text = { Text(name) }, onClick = { dayIndex = i; dayMenu = false })
                         }
@@ -258,12 +228,7 @@ private fun AddClassDialog(
                     OutlinedTextField(room, { room = it }, label = { Text("Room") }, singleLine = true, modifier = Modifier.weight(1f))
                     OutlinedTextField(faculty, { faculty = it }, label = { Text("Faculty") }, singleLine = true, modifier = Modifier.weight(1f))
                 }
-                Text(
-                    "Added to this date only.",
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 8.dp)
-                )
+                Text("Added to this date only.", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(top = 8.dp))
             }
         },
         confirmButton = {
@@ -312,10 +277,7 @@ private fun EditClassDialog(
             }
         },
         confirmButton = {
-            TextButton(
-                enabled = isTime(start) && isTime(end),
-                onClick = { onReschedule(start, end, room) }
-            ) { Text("Save") }
+            TextButton(enabled = isTime(start) && isTime(end), onClick = { onReschedule(start, end, room) }) { Text("Save") }
         },
         dismissButton = { TextButton(onClick = onDismiss) { Text("Close") } }
     )

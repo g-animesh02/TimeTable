@@ -16,12 +16,22 @@ class Converters {
 }
 
 @Database(
-    entities = [AttendanceEntity::class, CustomClassEntity::class, DayOverrideEntity::class],
-    version = 1,
+    entities = [
+        ModuleEntity::class,
+        OfferingEntity::class,
+        SelectedSubjectEntity::class,
+        AttendanceEntity::class,
+        CustomClassEntity::class,
+        DayOverrideEntity::class
+    ],
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
+    abstract fun moduleDao(): ModuleDao
+    abstract fun offeringDao(): OfferingDao
+    abstract fun selectedSubjectDao(): SelectedSubjectDao
     abstract fun attendanceDao(): AttendanceDao
     abstract fun customClassDao(): CustomClassDao
     abstract fun dayOverrideDao(): DayOverrideDao

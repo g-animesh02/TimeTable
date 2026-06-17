@@ -2,19 +2,29 @@ package com.animesh.timetable.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Teal = Color(0xFF1B5E5A)
-val TealDark = Color(0xFF0F3D3A)
-val TealLight = Color(0xFF4A8C87)
-val Amber = Color(0xFFE5A33B)
-val SurfaceLight = Color(0xFFF6F8F8)
-val OnTealContainer = Color(0xFFCDEAE7)
+// Minimalist indigo/violet accent on near-neutral surfaces.
+val Indigo = Color(0xFF5B5BD6)
+val IndigoDark = Color(0xFF3A3AA8)
+val IndigoSoft = Color(0xFFE7E7FB)
 
-// Day accent palette used for timetable cards.
+val NeutralBg = Color(0xFFFAFAFC)
+val NeutralSurface = Color(0xFFFFFFFF)
+val NeutralLine = Color(0xFFEAEAF0)
+
+val DarkBg = Color(0xFF111114)
+val DarkSurface = Color(0xFF1B1B20)
+val DarkLine = Color(0xFF2A2A31)
+
+// Calm, distinct per-day accents (used as thin markers, not fills — minimalist).
 val DayColors = listOf(
-    Color(0xFF1B5E5A), // Monday
-    Color(0xFF5A3D8C), // Tuesday
-    Color(0xFF8C5A1B), // Wednesday
-    Color(0xFF1B4E8C), // Thursday
-    Color(0xFF8C1B4E), // Friday
-    Color(0xFF3D8C1B)  // Saturday
+    Color(0xFF5B5BD6), // Monday   – indigo
+    Color(0xFF2BA89E), // Tuesday  – teal
+    Color(0xFFE08A2B), // Wednesday– amber
+    Color(0xFF4F8EF7), // Thursday – blue
+    Color(0xFFD45D9B), // Friday   – pink
+    Color(0xFF6Fae46)  // Saturday – green
 )
+
+val Good = Color(0xFF2E9E5B)
+val Warn = Color(0xFFE0A22B)
+val Bad = Color(0xFFD4504E)

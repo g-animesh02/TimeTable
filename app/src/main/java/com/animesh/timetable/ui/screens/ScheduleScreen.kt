@@ -3,7 +3,6 @@ package com.animesh.timetable.ui.screens
 import android.content.Intent
 import android.widget.Toast
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -42,6 +41,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.animesh.timetable.data.model.ScheduleEntry
 import com.animesh.timetable.ui.MainViewModel
+import com.animesh.timetable.ui.export.ImageExporter
 import com.animesh.timetable.ui.theme.DayColors
 import kotlinx.coroutines.launch
 
@@ -65,145 +65,87 @@ fun ScheduleScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                     onClick = {
                         scope.launch {
                             val bmp = graphicsLayer.toImageBitmap().asAndroidBitmap()
-                            val uri = com.animesh.timetable.ui.export.ImageExporter.save(
-                                context, bmp, "Timetable"
-                            )
+                            val uri = ImageExporter.save(context, bmp, "Timetable")
                             if (uri != null) {
                                 Toast.makeText(context, "Saved to Pictures/TimeTable", Toast.LENGTH_SHORT).show()
-                                context.startActivity(
-                                    com.animesh.timetable.ui.export.ImageExporter.shareIntent(context, uri)
-                                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                                )
-                            } else {
-                                Toast.makeText(context, "Export failed", Toast.LENGTH_SHORT).show()
-                            }
+                                context.startActivity(ImageExporter.shareIntent(context, uri).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                            } else Toast.makeText(context, "Export failed", Toast.LENGTH_SHORT).show()
                         }
                     },
                     icon = { Icon(Icons.Filled.IosShare, contentDescription = null) },
-                    text = { Text("Export image") }
+                    text = { Text("Export") }
                 )
             }
         }
     ) { padding ->
         if (schedule.isEmpty()) {
-            EmptyState(
-                "No classes yet",
-                "Go to Settings and pick the subjects you're enrolled in.",
-                Modifier.padding(padding)
-            )
+            EmptyState("No classes yet", "Pick the subjects you're enrolled in from Settings or the Modules tab.", Modifier.padding(padding))
             return@Scaffold
         }
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .verticalScroll(rememberScrollState())
+            modifier = Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())
         ) {
             Box(
-                modifier = Modifier
-                    .drawWithContent {
-                        graphicsLayer.record { this@drawWithContent.drawContent() }
-                        drawLayer(graphicsLayer)
-                    }
-                    .background(MaterialTheme.colorScheme.background)
+                modifier = Modifier.drawWithContent {
+                    graphicsLayer.record { this@drawWithContent.drawContent() }
+                    drawLayer(graphicsLayer)
+                }.background(MaterialTheme.colorScheme.background)
             ) {
-                TimetableSheet(schedule)
+                TimetableSheet(state.activeModuleName, state.section, schedule)
             }
-            Spacer(Modifier.height(88.dp))
+            Spacer(Modifier.height(96.dp))
         }
     }
 }
 
-/** The full self-contained timetable rendered for both on-screen display and image export. */
 @Composable
-private fun TimetableSheet(schedule: Map<String, List<ScheduleEntry>>) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.background)
-            .padding(16.dp)
-    ) {
-        Text(
-            "My Timetable — Module 5",
-            style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.primary
-        )
-        Spacer(Modifier.height(12.dp))
-
+private fun TimetableSheet(moduleName: String, section: String, schedule: Map<String, List<ScheduleEntry>>) {
+    Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.background).padding(20.dp)) {
+        Text(moduleName, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+        Text("Section $section", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Spacer(Modifier.height(16.dp))
         DAY_ORDER.forEachIndexed { idx, day ->
             val entries = schedule[day].orEmpty()
             if (entries.isEmpty()) return@forEachIndexed
-            DayCard(day, DayColors[idx % DayColors.size], entries)
-            Spacer(Modifier.height(12.dp))
+            DaySection(day, DayColors[idx % DayColors.size], entries)
+            Spacer(Modifier.height(18.dp))
         }
     }
 }
 
 @Composable
-private fun DayCard(day: String, accent: Color, entries: List<ScheduleEntry>) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .background(MaterialTheme.colorScheme.surface)
+private fun DaySection(day: String, accent: Color, entries: List<ScheduleEntry>) {
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(bottom = 8.dp)) {
+        Box(Modifier.size(8.dp).clip(RoundedCornerShape(2.dp)).background(accent))
+        Spacer(Modifier.width(8.dp))
+        Text(day.uppercase(), style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+    Column {
+        entries.forEach { e -> ClassRow(e, accent) }
+    }
+}
+
+@Composable
+private fun ClassRow(e: ScheduleEntry, accent: Color) {
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp),
+        verticalAlignment = Alignment.Top
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(accent)
-                .padding(horizontal = 14.dp, vertical = 8.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(day, color = Color.White, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.titleMedium)
-            Spacer(Modifier.weight(1f))
-            Text("${entries.size} class${if (entries.size == 1) "" else "es"}", color = Color.White.copy(alpha = 0.85f), style = MaterialTheme.typography.labelMedium)
+        Column(Modifier.width(58.dp)) {
+            Text(e.start, fontWeight = FontWeight.SemiBold, style = MaterialTheme.typography.bodyMedium)
+            Text(e.end, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-        entries.forEach { e ->
-            Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 10.dp)) {
-                Column(Modifier.width(86.dp)) {
-                    Text(e.start, fontWeight = FontWeight.SemiBold, style = MaterialTheme.typography.bodyMedium)
-                    Text(e.end, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
-                Box(
-                    Modifier
-                        .width(3.dp)
-                        .height(38.dp)
-                        .background(accent, RoundedCornerShape(2.dp))
-                )
-                Column(Modifier.padding(start = 12.dp).weight(1f)) {
-                    Text(
-                        e.subject + if (e.isExtra) "  (extra)" else "",
-                        fontWeight = FontWeight.Medium,
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                    val detail = buildString {
-                        if (e.room.isNotBlank()) append("Room ${e.room}")
-                        if (e.faculty.isNotBlank()) { if (isNotEmpty()) append("  •  "); append(e.faculty) }
-                    }
-                    if (detail.isNotBlank()) {
-                        Text(detail, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
-                }
+        Box(Modifier.width(2.dp).height(40.dp).background(accent.copy(alpha = 0.5f)))
+        Column(Modifier.padding(start = 14.dp).weight(1f)) {
+            Text(
+                e.subject + if (e.isExtra) "  ·  extra" else "",
+                fontWeight = FontWeight.Medium, style = MaterialTheme.typography.bodyLarge
+            )
+            val detail = buildString {
+                if (e.room.isNotBlank()) append("Room ${e.room}")
+                if (e.faculty.isNotBlank()) { if (isNotEmpty()) append("  ·  "); append(e.faculty) }
             }
+            if (detail.isNotBlank()) Text(detail, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-        Spacer(Modifier.height(4.dp))
-    }
-}
-
-@Composable
-fun EmptyState(title: String, subtitle: String, modifier: Modifier = Modifier) {
-    Column(
-        modifier = modifier.fillMaxSize().padding(32.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-        Spacer(Modifier.height(8.dp))
-        Text(
-            subtitle,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
     }
 }
