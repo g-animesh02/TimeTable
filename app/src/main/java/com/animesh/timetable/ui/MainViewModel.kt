@@ -128,7 +128,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             modules = mi.modules,
             activeModuleId = mi.active,
             section = mi.section,
-            themeMode = mi.theme,
+            themeMode = ti.theme,
             selectedSubjects = scoped.selected,
             offerings = scoped.offerings,
             customClasses = scoped.customClasses,
