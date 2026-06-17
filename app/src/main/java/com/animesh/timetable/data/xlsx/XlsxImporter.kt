@@ -26,7 +26,11 @@ object XlsxImporter {
     )
 
     private val DAYS = listOf("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY")
-    private val OVERRIDE = mapOf("Prof. Milind M. Akarte" to "Operations Strategy")
+    // Disambiguation for faculty who teach more than one course (resolved by faculty, not column order).
+    private val OVERRIDE = mapOf(
+        "Prof. Milind M. Akarte" to "Operations Strategy",
+        "Prof. Anju Singh" to "Sustainable Development for Business"
+    )
 
     class ParseException(message: String) : Exception(message)
 
@@ -175,6 +179,32 @@ object XlsxImporter {
             return -1
         }
 
+        // Pass 1: learn faculty -> subjects from blocks where faculty count == subject count.
+        val facToSubjects = HashMap<String, MutableSet<String>>()
+        for (day in DAYS) {
+            val ds = dayRow[day] ?: continue
+            val slotsR = subRow(ds, "SLOTS"); val courseR = subRow(ds, "Course Name"); val facultyR = subRow(ds, "Faculty")
+            if (courseR < 0) continue
+            for ((a, b, _, _) in ranges) {
+                val slotRaw = (a until b).firstNotNullOfOrNull { c -> cell(slotsR, c).ifEmpty { null } } ?: ""
+                val course = (a until b).firstNotNullOfOrNull { c -> cell(courseR, c).ifEmpty { null } } ?: ""
+                if (course.isEmpty() || course.lowercase().startsWith("lunch") || slotRaw.contains("surprise", true)) continue
+                val subs = splitSubjects(course)
+                val facs = (a until b).map { cell(facultyR, it).replace("\n", " ").trim() }.filter { it.isNotEmpty() }
+                if (facs.size == subs.size) facs.forEachIndexed { i, f -> facToSubjects.getOrPut(f) { mutableSetOf() }.add(subs[i]) }
+            }
+        }
+
+        fun resolveSectioned(faculty: String, subjects: List<String>, k: Int): String {
+            OVERRIDE[faculty]?.let { if (it in subjects) return it }
+            val candidates = subjects.filter { it in (facToSubjects[faculty] ?: emptySet()) }
+            return when {
+                candidates.size == 1 -> candidates[0]
+                subjects.size == 1 -> subjects[0]
+                else -> subjects.getOrNull(k) ?: subjects.last()
+            }
+        }
+
         val drafts = ArrayList<Draft>()
         for (day in DAYS) {
             val ds = dayRow[day] ?: continue
@@ -211,9 +241,7 @@ object XlsxImporter {
                     val cols = (a until b).filter { fac(it).isNotEmpty() }
                     cols.forEachIndexed { k, c ->
                         val sec = cell(sectionR, c)
-                        val su = if (subjects.size == 1) subjects[0]
-                        else OVERRIDE[fac(c)]?.takeIf { it in subjects }
-                            ?: (subjects.getOrNull(k) ?: subjects.last())
+                        val su = resolveSectioned(fac(c), subjects, k)
                         drafts.add(
                             Draft(day.lowercase().replaceFirstChar { it.uppercase() }, st, et, slot, sec,
                                 su, fac(c), room(c))
